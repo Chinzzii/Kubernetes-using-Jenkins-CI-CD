@@ -1,10 +1,10 @@
 FROM centos:latest
-RUN yum install -y --disablerepo=appstream httpd zip unzip && \
+RUN yum install -y httpd zip unzip wget && \
     yum clean all
 RUN mkdir -p /var/www/html/
 WORKDIR /var/www/html/
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-RUN unzip photogenic.zip && \
+RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip && \
+    unzip photogenic.zip && \
     cp -rvf photogenic/* . && \
     rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]

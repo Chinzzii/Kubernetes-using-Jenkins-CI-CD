@@ -8,4 +8,4 @@ RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page2
     cp -rvf photogenic/* . && \
     rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
+EXPOSE 80 22

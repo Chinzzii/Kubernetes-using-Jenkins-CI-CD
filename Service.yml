@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: chinzzii
+  labels:
+    app: chinzzii
+spec:
+  ports:
+    - port: 8080
+      targetPort: 80
+      nodePort: 31200
+  selector:
+    app: chinzzii
+  type: LoadBalancer
+  
